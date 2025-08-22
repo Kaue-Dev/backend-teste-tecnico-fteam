@@ -1,98 +1,116 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Backend Teste Técnico FTeam
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este repositório contém uma aplicação backend desenvolvida com NestJS para um teste técnico. A aplicação gerencia uma lista de tarefas (todos), permitindo operações CRUD (Criar, Ler, Atualizar, Deletar).
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Tecnologias Utilizadas
 
-## Description
+*   **NestJS**: Um framework progressivo Node.js para a construção de aplicações server-side eficientes e escaláveis.
+*   **TypeScript**: Linguagem de programação que adiciona tipagem estática ao JavaScript.
+*   **Cuid**: Biblioteca para geração de IDs únicos.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Estrutura do Projeto
 
-## Project setup
+O projeto segue a estrutura padrão de uma aplicação NestJS, com módulos, controladores, serviços e entidades bem definidos. A lógica principal da aplicação está concentrada no módulo `todos`.
 
-```bash
-$ npm install
+```
+backend-teste-tecnico-fteam/
+├── src/
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   └── todos/
+│       ├── dto/
+│       │   ├── create-todo.dto.ts
+│       │   └── update-todo.dto.ts
+│       ├── entities/
+│       │   └── todo.entity.ts
+│       ├── repositories/
+│       │   ├── create-todo.repository.ts
+│       │   ├── delete-todo.repository.ts
+│       │   ├── list-all-todos.repository.ts
+│       │   ├── list-todo-by-id.repository.ts
+│       │   ├── todos.storage.ts
+│       │   └── update-todo.repository.ts
+│       ├── todos.controller.ts
+│       ├── todos.module.ts
+│       ├── todos.service.ts
+│       └── ... (arquivos de teste)
+├── test/
+├── .gitignore
+├── .prettierrc
+├── nest-cli.json
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── ... (outros arquivos de configuração)
 ```
 
-## Compile and run the project
+## Funcionalidades
 
-```bash
-# development
-$ npm run start
+A aplicação oferece as seguintes funcionalidades para gerenciamento de tarefas:
 
-# watch mode
-$ npm run start:dev
+*   **Criar Tarefa**: Adiciona uma nova tarefa à lista.
+*   **Listar Todas as Tarefas**: Retorna todas as tarefas existentes.
+*   **Buscar Tarefa por ID**: Retorna uma tarefa específica pelo seu ID.
+*   **Atualizar Tarefa**: Modifica uma tarefa existente pelo seu ID.
+*   **Remover Tarefa**: Exclui uma tarefa da lista pelo seu ID.
 
-# production mode
-$ npm run start:prod
-```
+## Como Rodar o Projeto
 
-## Run tests
+### Pré-requisitos
 
-```bash
-# unit tests
-$ npm run test
+Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
 
-# e2e tests
-$ npm run test:e2e
+### Instalação
 
-# test coverage
-$ npm run test:cov
-```
+1.  Clone o repositório:
 
-## Deployment
+    ```bash
+    git clone https://github.com/Kaue-Dev/backend-teste-tecnico-fteam.git
+    ```
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+2.  Navegue até o diretório do projeto:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+    ```bash
+    cd backend-teste-tecnico-fteam
+    ```
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+3.  Instale as dependências:
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+    ```bash
+    npm install
+    # ou 
+    yarn install
+    ```
 
-## Resources
+### Execução
 
-Check out a few resources that may come in handy when working with NestJS:
+*   **Modo Desenvolvimento (com watch)**:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+    ```bash
+    npm run start:dev
+    ```
 
-## Support
+*   **Modo Produção**:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+    ```bash
+    npm run start:prod
+    ```
 
-## Stay in touch
+A aplicação estará disponível em `http://localhost:3000` (ou na porta definida pela variável de ambiente `PORT`).
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Endpoints da API
 
-## License
+Todos os endpoints são prefixados com `/todos`.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+| Método HTTP | Endpoint      | Descrição                       | Corpo da Requisição (Exemplo)                                  | Resposta (Exemplo)                                       |
+| :---------- | :------------ | :------------------------------ | :------------------------------------------------------------- | :------------------------------------------------------- |
+| `POST`      | `/todos`      | Cria uma nova tarefa            | `{"title": "Minha Tarefa", "description": "Descrição da tarefa", "completed": false}` | `{"id": "cuid_id", "title": "Minha Tarefa", ...}` |
+| `GET`       | `/todos`      | Lista todas as tarefas          | N/A                                                            | `[{"id": "cuid_id", "title": "Minha Tarefa", ...}]` |
+| `GET`       | `/todos/:id`  | Busca uma tarefa por ID         | N/A                                                            | `{"id": "cuid_id", "title": "Minha Tarefa", ...}` |
+| `PUT`       | `/todos/:id`  | Atualiza uma tarefa por ID      | `{"title": "Tarefa Atualizada", "completed": true}`        | `{"id": "cuid_id", "title": "Tarefa Atualizada", ...}` |
+| `DELETE`    | `/todos/:id`  | Remove uma tarefa por ID        | N/A                                                            | `200 OK` (sem corpo)                                     |
+
+## Considerações sobre o Armazenamento
+
+Atualmente, as tarefas são armazenadas em memória (`todos.storage.ts`). Isso significa que os dados não são persistidos e serão perdidos a cada reinício da aplicação. Para um ambiente de produção, seria necessário integrar um banco de dados (ex: PostgreSQL, MongoDB, MySQL) e um ORM/ODM (ex: TypeORM, Prisma, Mongoose).
