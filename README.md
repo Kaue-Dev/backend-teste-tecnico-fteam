@@ -1,4 +1,4 @@
-# Backend Teste Técnico FTeam
+# Teste Técnico Node.js (CRUD de Tarefas)
 
 Este repositório contém uma aplicação backend desenvolvida com NestJS para um teste técnico. A aplicação gerencia uma lista de tarefas (todos), permitindo operações CRUD (Criar, Ler, Atualizar, Deletar).
 
