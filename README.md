@@ -13,7 +13,7 @@ Este repositório contém uma aplicação backend desenvolvida com NestJS para u
 O projeto segue a estrutura padrão de uma aplicação NestJS, com módulos, controladores, serviços e entidades bem definidos. A lógica principal da aplicação está concentrada no módulo `todos`.
 
 ```
-backend-teste-tecnico-fteam/
+teste-tecnico-crud-nodejs/
 ├── src/
 │   ├── app.controller.ts
 │   ├── app.module.ts
@@ -66,13 +66,13 @@ Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
 1.  Clone o repositório:
 
     ```bash
-    git clone https://github.com/Kaue-Dev/backend-teste-tecnico-fteam.git
+    git clone https://github.com/Kaue-Dev/teste-tecnico-crud-nodejs.git
     ```
 
 2.  Navegue até o diretório do projeto:
 
     ```bash
-    cd backend-teste-tecnico-fteam
+    cd teste-tecnico-crud-nodejs
     ```
 
 3.  Instale as dependências:
